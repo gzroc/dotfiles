@@ -66,10 +66,11 @@ map <UP> :res -5<CR>
 map <DOWN> :res +5<CR>
 map <LEFT> :vertical resize+5<CR>
 map <RIGHT> :vertical resize-5<CR>
+" NERDTree 用 . 切换隐藏文件
+let NERDTreeMapToggleHidden='.'
 
 " ========= NERDTree
 map tt :NERDTreeToggle<CR>
-
 " ========= markdown-preview
 map r :MarkdownPreview<CR>
 " set to 1, nvim will open the preview window after entering the markdown buffer
