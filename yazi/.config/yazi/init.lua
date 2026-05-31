@@ -31,3 +31,8 @@ Header:children_add(function()
 	end
 	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
 end, 500, Header.LEFT)
+
+require("git"):setup {
+	-- Order of status signs showing in the linemode
+	order = 1500,
+}

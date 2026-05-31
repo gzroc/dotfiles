@@ -1004,3 +1004,10 @@ conds = [
 ]
 
 # : }}}
+
+# theme.toml / flavor.toml
+[git]
+unknown_sign  = " "
+modified_sign = "M"
+deleted_sign  = "D"
+clean_sign    = "✔"
