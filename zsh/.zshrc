@@ -107,3 +107,4 @@ function y() {
 }
 export EDITOR=nvim
 export VISUAL=nvim
+
