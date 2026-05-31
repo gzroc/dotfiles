@@ -1,0 +1,35 @@
+# 透明度（0=全透，1=不透，0.85是比较舒服的值）
+background_opacity 0.85
+
+# 模糊强度（需要桌面环境支持，Hyprland/KDE 效果最好）
+background_blur 5
+
+# 内边距，让文字别贴边
+window_padding_width 12
+
+# 去掉标题栏，更干净
+hide_window_decorations yes
+
+
+# JetBrains Mono - 码农最爱，清晰度高
+font_family JetBrainsMono Nerd Font
+
+# 或者 Fira Code - 带连字效果，-> 会显示成 → 
+font_family FiraCode Nerd Font
+
+# 字体大小
+font_size 13
+
+
+# 改成竖线光标，比方块优雅
+cursor_shape beam
+
+# 开启光标拖尾效果（v0.42+ 支持）
+cursor_trail 1
+cursor_trail_decay 0.1 0.4
+
+
+# BEGIN_KITTY_THEME
+# 1984 Orwellian
+include current-theme.conf
+# END_KITTY_THEME

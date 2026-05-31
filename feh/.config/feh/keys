@@ -1,0 +1,59 @@
+# ~/.config/feh/keys
+# feh 快捷键配置，vim/zathura 风格
+# 格式：action key1 [key2 [key3]]
+# 修饰键：C = Ctrl，S = Shift，1 = Mod1(Alt)，4 = Mod4(Super)
+# 键名参考 xev 输出的 X11 keysym
+
+# ── 浏览 ──────────────────────────────────
+next_img     j n space Right        # 下一张：j / n / 空格 / →
+prev_img     k p BackSpace Left     # 上一张：k / p / 退格 / ←
+jump_first   g Home                 # 第一张：g / Home
+jump_last    G End                  # 最后一张：G / End
+jump_random  z                      # 随机跳转
+
+# ── 缩放 ──────────────────────────────────
+zoom_in      equal plus KP_Add      # 放大：= / + / 小键盘+
+zoom_out     minus KP_Subtract      # 缩小：- / 小键盘-
+zoom_default asterisk KP_Multiply   # 原始大小 100%
+zoom_fit     slash KP_Divide        # 适应窗口大小
+zoom_fill    exclam                 # 填充窗口
+
+# ── 滚动 ──────────────────────────────────
+scroll_up    C-k C-Up KP_Up         # 向上滚动：C-k / C-↑ / 小键盘↑
+scroll_down  C-j C-Down KP_Down     # 向下滚动：C-j / C-↓ / 小键盘↓
+scroll_left  C-Left KP_Left         # 向左滚动
+scroll_right C-Right KP_Right       # 向右滚动
+
+# ── 旋转/翻转 ─────────────────────────────
+orient_1     less                   # 逆时针旋转 90°：<
+orient_3     greater                # 顺时针旋转 90°：>
+flip         underscore             # 垂直翻转：_
+mirror       bar                    # 水平翻转：|
+
+# ── 窗口 ──────────────────────────────────
+toggle_fullscreen     f F11         # 全屏切换：f / F11
+size_to_image         w             # 窗口适应图片大小
+
+# ── 信息显示 ──────────────────────────────
+toggle_info      i                  # 显示/隐藏图片信息
+toggle_exif      e                  # 显示/隐藏 EXIF 信息
+toggle_filenames d                  # 显示/隐藏文件名
+toggle_pointer   o                  # 显示/隐藏鼠标指针
+toggle_actions   a                  # 显示/隐藏 action 列表
+
+# ── 保存 / 删除 ───────────────────────────
+save_image    s                     # 保存当前图片副本
+save_filelist L                     # 保存当前文件列表
+remove        Delete                # 从列表移除（不删文件）
+delete        C-Delete              # 从列表移除并删除文件
+
+# ── 重载 ──────────────────────────────────
+reload_image  r                     # 重新加载当前图片
+render        R                     # 重新渲染（抗锯齿）
+
+# ── 菜单 ──────────────────────────────────
+toggle_menu   m                     # 打开菜单
+
+# ── 退出 ──────────────────────────────────
+quit          q Escape              # 退出
+close         x                     # 关闭当前窗口

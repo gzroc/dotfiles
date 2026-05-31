@@ -1,0 +1,40 @@
+cat > ~/.config/yazi/yazi.toml << 'EOF'
+# ============================================
+# 基础设置
+# ============================================
+
+[manager]
+show_hidden = true      # 显示隐藏文件（相当于按 zh）
+
+[preview]
+max_width = 800         # 预览区域最大宽度
+max_height = 800        # 预览区域最大高度
+
+# ============================================
+# 打开器配置（视频、图片、文档等）
+# ============================================
+
+# 视频播放器
+[[opener]]
+id = "video"
+run = 'mpv "$@"'
+desc = "mpv"
+orphan = true
+for = "linux"
+
+# 图片查看器
+[[opener]]
+id = "image"
+run = 'feh "$@"'
+desc = "feh"
+orphan = true
+for = "linux"
+
+# PDF 阅读器
+[[opener]]
+id = "pdf"
+run = 'zathura "$@"'
+desc = "Zathura"
+orphan = true
+for = "linux"
+EOF
