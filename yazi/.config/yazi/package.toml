@@ -18,5 +18,10 @@ use = "Reledia/glow"
 rev = "bd3eaa5"
 hash = "92b5c58159a51c567f82b618cee2b78"
 
+[[plugin.deps]]
+use = "TD-Sky/sudo"
+rev = "afd61ce"
+hash = "d390cd2d8b996939a695411b446f58d0"
+
 [flavor]
 deps = []

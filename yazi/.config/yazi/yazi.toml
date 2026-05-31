@@ -81,7 +81,7 @@ open_wpp = [
 ]
 # 图片 → feh
 open_feh = [
-	{ run = "feh --start-at %1 %d1", desc = "feh", for = "unix", orphan = true },
+	{ run = "feh --start-at %s1 %d1", desc = "feh", for = "unix", orphan = true },
 ]
 # PDF → Zathura
 open_zathura = [
@@ -89,7 +89,7 @@ open_zathura = [
 ]
 # Markdown → Markdown
 open_md = [
-	{ run = "vim -c 'MarkdownPreview' %s1", desc = "Markdown Preview", for = "unix", orphan = true },
+	{ run = "nvim -c 'MarkdownPreview' %s1", desc = "Markdown Preview", for = "unix", orphan = true },
 ]
 
 [open]
@@ -197,9 +197,6 @@ preloaders = [
 previewers = [
 	{ url = "*/", run = "folder" },
 
-    # Markdown 渲染预览（加在 text/* 之前）
-    { mime = "text/markdown", run = "code" },
-    { url = "*.{md,MD,markdown}", run = "code" },
 
 	# 代码
 	{ mime = "text/*", run = "code" },

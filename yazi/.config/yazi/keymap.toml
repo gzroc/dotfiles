@@ -378,11 +378,6 @@ desc = "向上移动 5 行"
 on   = "l"
 run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
-[[mgr.prepend_keymap]]
-on   = "!"
-for  = "unix"
-run  = 'shell "$SHELL" --block'
-desc = "Open $SHELL here"
 # 用！打开shell
 [[mgr.prepend_keymap]]
 on   = "!"
@@ -407,3 +402,52 @@ desc = "Grid view"
 on   = "T"
 run  = "plugin toggle-pane max-preview"
 desc = "Show or hide the preview pane"
+
+# ─────────────────────────────────────────────
+# sudo 操作（R 为前缀）
+# ─────────────────────────────────────────────
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "p", "p" ]
+run  = "plugin sudo -- paste"
+desc = "sudo 粘贴"
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "P" ]
+run  = "plugin sudo -- paste --force"
+desc = "sudo 强制粘贴"
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "r" ]
+run  = "plugin sudo -- rename"
+desc = "sudo 重命名"
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "a" ]
+run  = "plugin sudo -- create"
+desc = "sudo 新建文件或目录"
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "d" ]
+run  = "plugin sudo -- remove"
+desc = "sudo 移入回收站"
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "D" ]
+run  = "plugin sudo -- remove --permanently"
+desc = "sudo 永久删除"
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "m" ]
+run  = "plugin sudo -- chmod"
+desc = "sudo 修改权限"
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "p", "l" ]
+run  = "plugin sudo -- link"
+desc = "sudo 创建绝对路径符号链接"
+
+[[mgr.prepend_keymap]]
+on   = [ "R", "p", "L" ]
+run  = "plugin sudo -- hardlink"
+desc = "sudo 创建硬链接"
