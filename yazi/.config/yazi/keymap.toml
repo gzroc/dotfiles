@@ -311,9 +311,14 @@ run  = "cd ~/Documents"
 desc = "跳转到 ~/Documents"
 
 [[mgr.prepend_keymap]]
-on   = [ "g", "m" ]
+on   = [ "g", "m", "o" ]
 run  = "cd ~/Mount"
 desc = "跳转到 ~/Mount"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "m", "v" ]
+run  = "cd ~/Movie"
+desc = "跳转到 ~/Movie"
 
 [[mgr.prepend_keymap]]
 on   = [ "g", "y" ]
@@ -338,12 +343,17 @@ desc = "跳转到 ~/Video"
 [[mgr.prepend_keymap]]
 on   = [ "g", "p" ]
 run  = "cd ~/Pictures"
-desc = "跳转到 ~/Video"
+desc = "跳转到 ~/Pictures"
 #
 [[mgr.prepend_keymap]]
 on   = [ "g", "s" ]
 run  = "cd ~/.dotfiles"
 desc = "跳转到 ~/.dotfiles"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "m", "u" ]
+run  = "cd ~/Music"
+desc = "跳转到 ~/Music"
 
 [[mgr.prepend_keymap]]
 on  = "<C-n>"
@@ -457,3 +467,35 @@ desc = "sudo 创建硬链接"
 on   = [ "b", "m" ]
 run  = "plugin mount"
 desc = "打开挂载管理器"
+
+# 配置固定跳转到U盘默认文件夹
+[[mgr.prepend_keymap]]
+on   = [ "g", "u" ]
+run  = "cd /run/media/ken"
+desc = "跳转到可移动设备目录"
+
+# 与mpd联动
+[[mgr.prepend_keymap]]
+on   = [ "m", "c" ]
+run  = '''shell -- mpc clear && for f in %s; do mpc add "${f#/home/ken/Music/}"; done && mpc play'''
+desc = "清空并立即播放"
+
+[[mgr.prepend_keymap]]
+on   = [ "m", "a" ]
+run  = '''shell -- for f in %s; do mpc add "${f#/home/ken/Music/}"; done'''
+desc = "添加到播放队列"
+
+[[mgr.prepend_keymap]]
+on   = [ "m", "m" ]
+run  = "shell -- mpc toggle"
+desc = "播放/暂停"
+
+[[mgr.prepend_keymap]]
+on   = [ "m", ">" ]
+run  = "shell -- mpc next"
+desc = "下一首"
+
+[[mgr.prepend_keymap]]
+on   = [ "m", "<" ]
+run  = "shell -- mpc prev"
+desc = "上一首"

@@ -36,3 +36,13 @@ require("git"):setup {
 	-- Order of status signs showing in the linemode
 	order = 1500,
 }
+
+
+-- ─────────────────────
+Status:children_add(function()
+    local song = io.popen("mpc current 2>/dev/null"):read("*l")
+    if song and song ~= "" then
+        return ui.Span(" ♪ " .. song):fg("cyan")
+    end
+    return ""
+end, 4000, Status.RIGHT)
