@@ -451,3 +451,9 @@ desc = "sudo 创建绝对路径符号链接"
 on   = [ "R", "p", "L" ]
 run  = "plugin sudo -- hardlink"
 desc = "sudo 创建硬链接"
+
+# 打开挂载管理器
+[[mgr.prepend_keymap]]
+on   = [ "b", "m" ]
+run  = "plugin mount"
+desc = "打开挂载管理器"

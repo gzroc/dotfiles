@@ -23,5 +23,10 @@ use = "TD-Sky/sudo"
 rev = "afd61ce"
 hash = "d390cd2d8b996939a695411b446f58d0"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "598cdb6"
+hash = "e3260d0b1feded8c8e3ae3afa1169e30"
+
 [flavor]
 deps = []
