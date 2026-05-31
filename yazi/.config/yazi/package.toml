@@ -33,5 +33,10 @@ use = "yazi-rs/plugins:git"
 rev = "598cdb6"
 hash = "88e56a64b7ce7c4314427452343fef17"
 
+[[plugin.deps]]
+use = "Sonico98/exifaudio"
+rev = "4506f9d"
+hash = "4761fffb60a12d37096c34a356380cdf"
+
 [flavor]
 deps = []
