@@ -499,3 +499,8 @@ desc = "下一首"
 on   = [ "m", "<" ]
 run  = "shell -- mpc prev"
 desc = "上一首"
+
+[[mgr.prepend_keymap]]
+on   = [ "m", "d" ]
+run  = '''shell -- for f in %s; do mpc add "${f#/home/ken/Music/}"; done && mpc play'''
+desc = "添加整个目录到队列"

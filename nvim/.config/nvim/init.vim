@@ -197,6 +197,7 @@ noremap <LEADER><CR> :nohlsearch<CR>
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-airline/vim-airline'
+Plug 'uga-rosa/translate.nvim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() },'for' :['markdown', 'vim-plug'] } 
 Plug 'preservim/vim-markdown'
@@ -226,4 +227,39 @@ let g:loaded_ruby_provider = 0
 
 
 
+" ===== translate.nvim 配置 =====
+" 如果用 DeepL，填入密钥；用 Google 可删掉这行
+" setup 配置（Vimscript 里用 lua heredoc 调用）
+lua << EOF
+vim.g.deepl_api_auth_key = "fc3c59d4-792e-114a-dc47-c32b621f88da:fx"
 
+require("translate").setup({
+    default = {
+--        command = "google",
+        command = "deepl_free",  -- 末尾有 :fx 是免费版
+        output = "floating",
+    },
+})
+EOF
+
+" ===== 快捷键 =====
+" 翻译当前行
+nnoremap <Space>tl <Cmd>Translate ZH<CR>
+" 翻译选中区域
+xnoremap <Space>tl <Cmd>Translate ZH<CR>
+" 翻译光标下单词
+nnoremap <Space>tw viw<Cmd>Translate ZH<CR>
+" 翻译注释块
+nnoremap <Space>tc <Cmd>Translate ZH -comment<CR>
+" 选中内容替换为译文
+xnoremap <Space>tr <Cmd>Translate ZH -output=replace<CR>
+" 中译英
+xnoremap <Space>te <Cmd>Translate EN<CR>
+" 普通模式：翻译当前行（浮动窗口显示）
+nnoremap tr <Cmd>Translate ZH<CR>
+" 普通模式：翻译当前行并替换
+nnoremap ts <Cmd>Translate ZH -output=replace<CR>
+" V 模式：翻译选中内容（浮动窗口显示）
+xnoremap tr <Cmd>Translate ZH<CR>
+" V 模式：替换选中内容为译文
+xnoremap ts <Cmd>Translate ZH -output=replace<CR>
