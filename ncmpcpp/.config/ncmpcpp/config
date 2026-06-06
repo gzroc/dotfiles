@@ -1,0 +1,93 @@
+# ~/.config/ncmpcpp/config
+# ncmpcpp 0.10.1 配置文件
+
+##### 目录设置 #####
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = /home/ken/Music/.lyrics
+
+##### MPD 连接 #####
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = ~/Music
+mpd_connection_timeout = 5
+
+##### 封面脚本（换歌时执行）#####
+lyrics_fetchers = tags
+##### 界面启动 #####
+startup_screen = playlist
+#startup_slave_screen = lyrics
+startup_slave_screen = visualizer
+##### 歌曲格式 #####
+song_list_format = {$4%a$9 - }{%t}|{$8%f$9} $R {$3%l$9}
+song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+song_library_format = {%n - }{%t}|{%f}
+alternative_header_first_line_format = $b$5 ♪ {%t}|{%f} $/b
+alternative_header_second_line_format = $3{{%a}{ - %b}{ (%y)}}|{%D}$9
+song_window_title_format = {%a - }{%t}|{%f}
+
+now_playing_prefix = $b$5 ⏵  $9
+now_playing_suffix = $/b
+
+##### 列模式格式 #####
+song_columns_list_format = (5)[magenta]{l} (35)[yellow]{a} (30)[cyan]{b} (0)[white]{t}
+
+##### 进度条 #####
+progressbar_look = ━━●
+
+##### 颜色 #####
+colors_enabled = yes
+main_window_color = white
+header_window_color = magenta
+volume_color = yellow
+state_line_color = magenta
+state_flags_color = cyan
+progressbar_color = black
+progressbar_elapsed_color = magenta
+statusbar_color = white
+statusbar_time_color = cyan
+player_state_color = green
+
+# 当前选中项
+current_item_prefix = $(magenta)$r
+current_item_suffix = $/r$(end)
+current_item_inactive_column_prefix = $(cyan)$r
+current_item_inactive_column_suffix = $/r$(end)
+
+##### 显示模式 #####
+playlist_display_mode = columns
+browser_display_mode = columns
+search_engine_display_mode = columns
+playlist_editor_display_mode = columns
+
+##### 行为设置 #####
+mouse_support = yes
+mouse_list_scroll_whole_page = no
+lines_scrolled = 3
+cyclic_scrolling = no
+jump_to_now_playing_song_at_start = yes
+ask_before_clearing_playlists = yes
+clock_display_seconds = no
+display_bitrate = yes
+display_remaining_time = no
+regular_expressions = extended
+enable_window_title = yes
+ignore_leading_the = yes
+show_duplicate_tags = yes
+
+##### 歌词 #####
+#fetch_lyrics_for_current_song_in_background = yes
+
+##### 可视化 #####
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = Visualizer
+visualizer_in_stereo = no
+visualizer_type = spectrum
+visualizer_fps = 60
+visualizer_autoscale = no
+visualizer_spectrum_smooth_look = no
+visualizer_spectrum_dft_size = 3
+visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203
+visualizer_look = ▋▍
+##### 封面脚本（换歌时执行）#####
+execute_on_song_change = ~/.config/ncmpcpp/album_art.sh & ~/.config/ncmpcpp/fetch_lyrics.py
+
