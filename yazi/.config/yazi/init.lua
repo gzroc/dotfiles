@@ -11,18 +11,18 @@ Status:children_add(function(self)
 end, 3300, Status.LEFT)
 
 -- ── 状态栏右侧显示文件所属用户/组 ────────────
-Status:children_add(function()
-	local h = cx.active.current.hovered
-	if not h or ya.target_family() ~= "unix" then
-		return ""
-	end
-	return ui.Line {
-		ui.Span(ya.user_name(h.cha.uid) or tostring(h.cha.uid)):fg("magenta"),
-		":",
-		ui.Span(ya.group_name(h.cha.gid) or tostring(h.cha.gid)):fg("magenta"),
-		" ",
-	}
-end, 500, Status.RIGHT)
+ Status:children_add(function()
+ 	local h = cx.active.current.hovered
+ 	if not h or ya.target_family() ~= "unix" then
+ 		return ""
+ 	end
+ 	return ui.Line {
+ 		ui.Span(ya.user_name(h.cha.uid) or tostring(h.cha.uid)):fg("magenta"),
+ 		":",
+ 		ui.Span(ya.group_name(h.cha.gid) or tostring(h.cha.gid)):fg("magenta"),
+ 		" ",
+ 	}
+ end, 500, Status.RIGHT)
 
 -- ── 标头显示用户名和主机名 ───────────────────
 Header:children_add(function()
@@ -46,3 +46,16 @@ Status:children_add(function()
     end
     return ""
 end, 4000, Status.RIGHT)
+
+-- 在状态栏显示磁盘可用空间
+Status:children_add(function()
+    local f = io.popen("df -h . 2>/dev/null | awk 'NR==2 {print $4}'")
+    if not f then return "" end
+    local free = f:read("*l")
+    f:close()
+    if free and free ~= "" then
+        return ui.Span("💾" .. free)
+    end
+    return ""
+end, 10000, Status.RIGHT)
+
