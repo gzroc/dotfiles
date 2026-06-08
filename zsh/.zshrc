@@ -54,7 +54,7 @@ alias wgu='sudo wg-quick up wg0'
 alias wgd='sudo wg-quick down wg0'
 
 # 脚本快捷方式
-alias bg='~/scripts/change_wallpaper.sh &'
+alias bg='~/github/scripts/change_wallpaper.sh &'
 alias rw='/home/ken/github/scripts/Remote_tuee.sh &'
 alias tg='/home/ken/github/scripts/toggle-hifi.sh &'
 alias th='/home/ken/github/scripts/toggle-hifi.sh &'
