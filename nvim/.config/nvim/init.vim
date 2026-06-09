@@ -263,3 +263,29 @@ nnoremap ts <Cmd>Translate ZH -output=replace<CR>
 xnoremap tr <Cmd>Translate ZH<CR>
 " V 模式：替换选中内容为译文
 xnoremap ts <Cmd>Translate ZH -output=replace<CR>
+
+
+" 加载 Lua 配置
+lua << EOF
+-- 启用 OSC 52 剪贴板支持
+vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+        ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+        ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    },
+    paste = {
+        ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+        ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    },
+}
+
+-- 添加视觉反馈
+vim.api.nvim_create_autocmd('TextYankPost', {
+    callback = function()
+        vim.highlight.on_yank()
+        local copy_to_plus = require('vim.ui.clipboard.osc52').copy('+')
+        copy_to_plus(vim.v.event.regcontents)
+    end,
+})
+EOF
