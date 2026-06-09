@@ -1,7 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](red)\
+[
+$hostname\
+](red)\
 $os\
 $username\
 [](bg:peach fg:red)\
@@ -283,3 +285,13 @@ surface0 = "#363a4f"
 base = "#24273a"
 mantle = "#1e2030"
 crust = "#181926"
+
+# 提示符增加主机名显示
+# 强制开启 hostname 模块
+[hostname]
+# 设置当 SSH 连接或用户不是当前主机用户时显示，可以改为始终显示
+ssh_only = false
+# 自定义显示格式，默认是 " [$hostname]($style) "，可以加上 @ 等符号
+format = " @[$hostname](bold red) "
+# 可以设置是否显示真实主机名，还是别名等
+# 如果 hostname 太长，可以设置 truncation 截断
