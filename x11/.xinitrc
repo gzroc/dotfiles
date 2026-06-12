@@ -56,5 +56,7 @@ export XMODIFIERS=@im=fcitx
 udiskie --no-notify &
 kitty &
 osdlyrics &
+# 启动 picom 合成器
+picom -b &
 exec dwm
 
