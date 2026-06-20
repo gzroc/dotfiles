@@ -151,7 +151,9 @@ process_workers  = 5
 bizarre_retry    = 3
 image_alloc      = 536870912  # 512MB
 image_bound      = [ 10000, 10000 ]
-suppress_preload = false
+#关闭退出询问，改为true
+#suppress_preload = false
+suppress_preload = true
 
 [plugin]
 fetchers = [
