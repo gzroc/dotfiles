@@ -15,8 +15,8 @@ mpd_connection_timeout = 5
 lyrics_fetchers = tags
 ##### 界面启动 #####
 startup_screen = playlist
-#startup_slave_screen = lyrics
-startup_slave_screen = visualizer
+startup_slave_screen = lyrics
+#startup_slave_screen = visualizer
 ##### 歌曲格式 #####
 song_list_format = {$4%a$9 - }{%t}|{$8%f$9} $R {$3%l$9}
 song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}

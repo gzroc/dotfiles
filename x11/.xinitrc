@@ -52,6 +52,7 @@ export GLFW_IM_MODULE=ibus
 export GTK_IM_MODULE=fcitx5
 export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx
+
 # 加到 ~/.xinitrc 里（dwm 启动时自动运行）
 udiskie --no-notify &
 kitty &

@@ -107,4 +107,4 @@ function y() {
 }
 export EDITOR=nvim
 export VISUAL=nvim
-
+export PATH="$HOME/.npm-global/bin:$PATH"
